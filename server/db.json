@@ -1,0 +1,20 @@
+{
+    "products": [
+      {
+        "id": 2,
+        "name": "PC 1",
+        "status": true,
+        "category": "PC",
+        "price": 10000000,
+        "date": "04/07/2024"
+      },
+      {
+        "id": 5,
+        "name": "PC 2",
+        "status": true,
+        "category": "PC",
+        "price": 10000000,
+        "date": "04/07/2024"
+      }
+    ]
+  }

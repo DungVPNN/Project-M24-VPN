@@ -1,0 +1,109 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+.admin-space {
+  background-color: #f4f4f4;
+  padding: 20px;
+  width: 100%;
+}
+
+.main-admin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  img{
+    margin-bottom: -30px;
+    width: 110px;
+  }
+
+  h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 5px; /* Add margin for separation */
+  }
+
+  .main-main {
+    display: flex;
+    align-items: center;
+    margin-right: 5px; /* Move to the right */
+  }
+
+  .main-search {
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    padding: 8px 20px; /* Adjust padding for search bar */
+    border-radius: 20px;
+    margin-left: 423px; /* Add margin for spacing */
+
+    input {
+      border: none;
+      background: none;
+      outline: none;
+      padding: 5px;
+      margin-left: 20px;
+      font-size: 14px;
+      color: #333;
+      width: 200px; /* Adjust width of input */
+    }
+
+    .icon-search {
+      font-size: 18px;
+      color: #888;
+    }
+  }
+
+  .main-icon {
+    .icon-bell {
+      font-size: 20px;
+      color: #888;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      margin-left: 60px; /* Add margin for spacing */
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+
+  .main-account {
+    display: flex;
+    align-items: center;
+    margin-left: 23px; /* Add margin for spacing */
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+      margin-bottom: -5px;
+      cursor: pointer; /* Adjust margin for spacing */
+    }
+
+    span {
+      font-size: 14px;
+      color: #333;
+      margin-right: 5px;
+      cursor: pointer;    /* Adjust margin for spacing */
+    }
+
+    svg {
+      font-size: 14px;
+      color: #888;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+}
