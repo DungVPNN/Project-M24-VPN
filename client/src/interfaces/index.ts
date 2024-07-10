@@ -20,14 +20,14 @@ export interface Category {
 }
 
 export interface User {
-    user_id:number,
-    username:string,
+    id:number,
+    name:string,
     email:string,
     status:boolean,
     password:string,
     role:boolean  //True - Quản trị viên False - User
     phone:string,
     address:string,
-    created_at:string,
-    updated_at:string,
+    date:string,
+    updated_date:string,
 }

@@ -1,38 +1,26 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { addUserAPI, getAllUserAPI, updateUserAPI } from "../../services/user.service";
+import { User } from '../../interfaces/index'
 
-export const getAllUser:any = createAsyncThunk("users/getAllUser",async ()=>{
-    const response = await axios.get("http://localhost:8080/users")
-    return response.data
-})
+// hàm lấy thông tin user
+export const getAllUser:any = createAsyncThunk("users/getAllUser", getAllUserAPI)
 
-// hàm thêm thông tin
+// hàm thêm thông tin user
 export const addUser: any = createAsyncThunk(
-    "users/addUser",
-    async (user: any) => {
-        const response: any = await axios.post(
-            "http://localhost:8080/users",
-            user
-        );
-        return response.data;
-    }
+    "users/addUser", addUserAPI
 );
-// hàm cập nhật
-// export const updateUser: any = createAsyncThunk(
-//     "users/updateUser",
-//     async (item: any) => {
-//         const response: any = await axios.put(
-//             `http://localhost:8080/users/${item.id}`,
-//             item
-//         );
-//         return response.data;
-//     }
-// );
+
+// hàm cập nhật user
+export const updateUser: any = createAsyncThunk(
+    "users/updateUser", updateUserAPI
+);
+
+const initialState: User[] = []
 
 const userReducer = createSlice({
     name:"users",
     initialState:{
-        users:[]
+        users: initialState
     },
     reducers:{
         // chứa action
@@ -43,6 +31,7 @@ const userReducer = createSlice({
             console.log('chờ call API');
         })
         .addCase(getAllUser.fulfilled, (state,action)=>{
+            
             state.users=action.payload
         })
         .addCase(getAllUser.rejected, (state,action)=>{
@@ -53,14 +42,14 @@ const userReducer = createSlice({
             state.users.push(action.payload);
         })
         // cập nhập
-        // .addCase(updateUser.fulfilled, (state: any, action) => {
-        //     const index = state.users.findIndex((item: any) => {
-        //         return item.id === action.payload.id;
-        //     });
-        //     if (index != -1) {
-        //         state.users[index] = action.payload;
-        //     }
-        // });
+        .addCase(updateUser.fulfilled, (state: any, action) => {
+            const index = state.users.findIndex((item: any) => {
+                return item.id === action.payload.id;
+            });
+            if (index != -1) {
+                state.users[index] = action.payload;
+            }
+        });
     }
 })
 export default userReducer.reducer;

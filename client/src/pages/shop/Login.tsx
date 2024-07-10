@@ -35,7 +35,7 @@ const Login: React.FC = () => {
       setErrors({ username: '', password: '', login: '' });
       setMessage('Đăng nhập thành công');
       setTimeout(() => {
-        window.location.href = 'http://localhost:5173/admin';
+        window.location.href = 'http://localhost:5173/Dashboard';
       }, 2000);
     } else {
       setErrors({ ...newErrors, login: 'Không đúng tài khoản hoặc mật khẩu' });
@@ -46,7 +46,7 @@ const Login: React.FC = () => {
     if (message) {
       const timer = setTimeout(() => {
         setMessage('');
-        setShowForm(false); // Hide form after success message
+        setShowForm(false); 
       }, 2000);
       return () => clearTimeout(timer);
     }
@@ -63,7 +63,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="form-container sign-in-container">
-      {showForm && ( // Conditionally render the form based on showForm state
+      {showForm && (
         <form onSubmit={handleLogin}>
           <h1>Đăng Nhập</h1>
           <div className="social-container">

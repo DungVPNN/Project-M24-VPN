@@ -32,6 +32,9 @@ function SignUpForm() {
 
   const handleOnSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
+    setTimeout(()=>{
+      window.location.href='http://localhost:5173/login'
+    },2000);
     const { name, email, password } = state;
 
     let valid = true;

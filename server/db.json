@@ -16,5 +16,41 @@
         "price": 10000000,
         "date": "04/07/2024"
       }
+    ],
+    "users":[
+      {
+        "id": 80812854,
+        "name": "123",
+        "email": "123@gmail.com",
+        "status": true,
+        "password": "123",
+        "date": "08/07/2024",
+        "updated_date": "08/07/2024"
+      },
+      {
+        "id": 9976771,
+        "name": "g",
+        "email": "g@gmail.com",
+        "status": false,
+        "password": "g",
+        "date": "08/07/2024",
+        "updated_at": "08/07/2024"
+      }
+    ],
+    "classify": [
+      {
+        "id": 26438103,
+        "name": "g",
+        "description": "g",
+        "status": true,
+        "products": []
+      },
+      {
+        "id": 90937503,
+        "name": "a",
+        "description": "a",
+        "status": true,
+        "products": []
+      }
     ]
   }
